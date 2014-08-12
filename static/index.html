@@ -115,5 +115,14 @@
         <script src="/js/ui-utils.js"></script>
         <script src="/js/client.js?v=0.3.3"></script>
         <script src="/js/experiments.js"></script>
+        <script type="text/javascript">
+          $(document).ready(function exec ( ) {
+            console.log(serverSettings, serverSettings.features);
+            var body = $('body');
+            serverSettings.features.map(function (feature) {
+              body.addClass(feature);
+            });
+          });
+        </script>
     </body>
 </html>
