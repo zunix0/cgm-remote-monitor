@@ -26,7 +26,7 @@
   "scripts": {
     "start": "node server.js",
     "test": "make test",
-    "postinstall": "node node_modules/bower/bin/bower install"
+    "postinstall": "make build"
   },
   "engines": {
     "node": ">=0.10 <0.12"
@@ -42,7 +42,7 @@
     "moment": "2.8.1",
     "pushover-notifications": "0.2.0",
     "sgvdata": "0.0.2",
-    "socket.io": "^0.9.17",
+    "socket.io": "0.9.17",
     "git-rev": "git://github.com/bewest/git-rev.git"
   },
   "devDependencies": {

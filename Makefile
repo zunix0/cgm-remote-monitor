@@ -8,6 +8,9 @@ BLANKET=--require blanket
 
 all: test
 
+build:
+	node ./node_modules/.bin/drywall-compile
+	node node_modules/bower/bin/bower install
 travis-cov:
 	NODE_ENV=test node_modules/.bin/mocha ${BLANKET} -R 'travis-cov' ${TESTS}
 
