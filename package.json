@@ -43,7 +43,9 @@
     "pushover-notifications": "0.2.0",
     "sgvdata": "0.0.2",
     "socket.io": "0.9.17",
-    "git-rev": "git://github.com/bewest/git-rev.git"
+    "git-rev": "git://github.com/bewest/git-rev.git",
+    "bootevent": "git://github.com/bewest/bootevent.git",
+    "Drywall": "git://github.com/bewest/drywall.git#bewest/nightscout/init"
   },
   "devDependencies": {
     "supertest": "~0.13.0",
