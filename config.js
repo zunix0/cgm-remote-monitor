@@ -1,37 +1,5 @@
 'use strict';
 
-var nconf = require('nconf');
-var Emitter = require('events').EventEmitter;
-var bootevent = require('bootevent');
-
-function configure (cb) {
-  nconf.use('memory');
-  nconf.use('config', { type: 'file', file: './drywall_config.json' });
-  nconf.defaults({
-    port: 3000
-  });
-  nconf.argv({
-    "mongodb.uri": ""
-  });
-  return bootevent( ).acquire(function db (ctx, next) {
-    console.log('context during acquiring db', ctx, arguments);
-    var now = new Date( );
-    console.log('starting acquire', arguments);
-    setTimeout(function done ( ) {
-      ctx.timeout = (new Date( )) - now;
-      console.log('simulated later', arguments);
-      next( );
-    }, 2000)
-    ;
-
-  })
-  .boot(function booted ( ) {
-    console.log('START PROCESS', arguments);
-  });
-  ;
-  
-  return nconf;
-}
 exports.port = process.env.PORT || 3000;
 exports.mongodb = {
   uri: process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'localhost/drywall'
@@ -80,8 +48,3 @@ exports.oauth = {
     secret: process.env.TUMBLR_OAUTH_SECRET || ''
   }
 };
-if (!module.parent) {
-  var proc = configure( );
-  console.log(proc);
-
-}
