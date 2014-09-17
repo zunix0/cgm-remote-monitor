@@ -19,6 +19,7 @@ build:
 	cat ./node_modules/.bin/drywall-compile
 	# EXPERIMENT 3
 	node ./node_modules/.bin/drywall-compile
+	tree node_modules/Drywall/public
 travis-cov:
 	NODE_ENV=test node_modules/.bin/mocha ${BLANKET} -R 'travis-cov' ${TESTS}
 
