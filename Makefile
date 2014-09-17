@@ -15,6 +15,7 @@ build:
 	${BOWER} install
 	# EXPERIMENT 1
 	(cd ./node_modules/Drywall; node ../.bin/bower install)
+	tree node_modules/Drywall/public
 	# EXPERIMENT 2
 	cat ./node_modules/.bin/drywall-compile
 	# EXPERIMENT 3
