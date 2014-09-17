@@ -10,7 +10,6 @@ BLANKET=--require blanket
 all: test
 
 build:
-	# bower install
 	${BOWER} install
 	# EXPERIMENT 1
 	(cd ./node_modules/Drywall; ../.bin/bower install)
