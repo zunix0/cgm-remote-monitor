@@ -10,7 +10,6 @@ all: test
 
 build:
 	node node_modules/bower/bin/bower install
-	(cd ./node_modules/Drywall; node build.js)
 	cat ./node_modules/.bin/drywall-compile
 	node ./node_modules/.bin/drywall-compile
 travis-cov:
