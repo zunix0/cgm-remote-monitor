@@ -13,7 +13,7 @@ build:
 	${BOWER} install
 	# EXPERIMENT 1
 	mv .bowerrc not.bowerrc
-	# (cd ./node_modules/Drywall; node ../.bin/bower install)
+	(cd ./node_modules/Drywall; node ../.bin/bower install)
 	# EXPERIMENT 2
 	# cat ./node_modules/.bin/drywall-compile
 	# EXPERIMENT 3
