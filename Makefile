@@ -10,6 +10,8 @@ BLANKET=--require blanket
 all: test
 
 build:
+	sudo apt-get install tree
+	npm install grunt
 	${BOWER} install
 	# EXPERIMENT 1
 	(cd ./node_modules/Drywall; ../.bin/bower install)
@@ -17,6 +19,8 @@ build:
 	cat ./node_modules/.bin/drywall-compile
 	# EXPERIMENT 3
 	node ./node_modules/.bin/drywall-compile
+	# EXPERIMENT 4
+	(cd ./node_modules/Drywall; ../.bin/grunt build)
 travis-cov:
 	NODE_ENV=test node_modules/.bin/mocha ${BLANKET} -R 'travis-cov' ${TESTS}
 
