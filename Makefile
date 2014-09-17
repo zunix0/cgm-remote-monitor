@@ -3,13 +3,15 @@ TESTS=tests/*.js
 MONGO_CONNECTION?=mongodb://localhost/test_db
 CUSTOMCONNSTR_mongo_settings_collection?=test_settings
 CUSTOMCONNSTR_mongo_collection?=test_sgvs
+BOWER=$(shell which ./node_modules/.bin/bower)
 
 BLANKET=--require blanket 
 
 all: test
 
 build:
-	node node_modules/bower/bin/bower install
+	${BOWER} install
+	(cd ./node_modules/Drywall; ../.bin/bower install)
 	cat ./node_modules/.bin/drywall-compile
 	node ./node_modules/.bin/drywall-compile
 travis-cov:
