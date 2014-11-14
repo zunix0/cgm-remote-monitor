@@ -98,6 +98,12 @@ function create ( ) {
 }
 
 store(function ready ( ) {
+  // bewest: crude hack to force SCRIPT_NAME as described
+  // https://docs.python.org/2/library/wsgiref.html
+  // intended to allow proxying at some prefix path
+  if (env.SCRIPT_NAME) {
+    app = express( ).use(env.SCRIPT_NAME, app);
+  }
   var server = create( ).listen(PORT);
   console.log('listening', PORT);
 

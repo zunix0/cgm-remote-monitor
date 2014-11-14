@@ -47,6 +47,7 @@ function config ( ) {
   env.SSL_KEY = readENV('SSL_KEY');
   env.SSL_CERT = readENV('SSL_CERT');
   env.SSL_CA = readENV('SSL_CA');
+  env.SCRIPT_NAME = readENV('SCRIPT_NAME');
   env.ssl = false;
   if (env.SSL_KEY && env.SSL_CERT) {
     env.ssl = {
